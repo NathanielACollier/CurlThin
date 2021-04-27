@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace CurlThin.Enums
+namespace nac.CurlThin.Enums
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum CURLpoll

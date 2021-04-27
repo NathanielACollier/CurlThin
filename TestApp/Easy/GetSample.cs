@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using CurlThin;
-using CurlThin.Enums;
-using CurlThin.Helpers;
+using nac.CurlThin;
+using nac.CurlThin.Enums;
+using nac.CurlThin.Helpers;
 
 namespace TestApp.Easy
 {

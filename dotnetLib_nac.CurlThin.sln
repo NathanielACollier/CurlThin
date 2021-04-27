@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurlThin", "CurlThin\CurlThin.csproj", "{72DCABEB-E6BB-4213-A710-64EF7089460C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nac.CurlThin", "nac.CurlThin\nac.CurlThin.csproj", "{72DCABEB-E6BB-4213-A710-64EF7089460C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}"
 EndProject

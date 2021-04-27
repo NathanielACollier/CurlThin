@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CurlThin\CurlThin.csproj" />
+    <ProjectReference Include="..\nac.CurlThin\nac.CurlThin.csproj" />
   </ItemGroup>
 
 </Project>

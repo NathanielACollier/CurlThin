@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace CurlThin.Enums
+namespace nac.CurlThin.Enums
 {
     /// <summary>
     ///     Reference: https://github.com/curl/curl/blob/master/include/curl/curl.h

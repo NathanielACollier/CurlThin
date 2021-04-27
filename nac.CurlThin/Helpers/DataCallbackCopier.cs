@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace CurlThin.Helpers
+namespace nac.CurlThin.Helpers
 {
     public class DataCallbackCopier : IDisposable
     {

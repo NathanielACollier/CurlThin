@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace CurlThin.Enums
+namespace nac.CurlThin.Enums
 {
     [Flags]
     [SuppressMessage("ReSharper", "InconsistentNaming")]

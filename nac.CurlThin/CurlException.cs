@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 
 using System;
-using CurlThin.Enums;
+using nac.CurlThin.Enums;
 
-namespace CurlThin
+namespace nac.CurlThin
 {
 	public class CurlException : Exception
 	{

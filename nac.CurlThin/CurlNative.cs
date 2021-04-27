@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using CurlThin.Enums;
-using CurlThin.SafeHandles;
+using nac.CurlThin.Enums;
+using nac.CurlThin.SafeHandles;
 
-namespace CurlThin
+namespace nac.CurlThin
 {
     /// <remarks>
     ///     Type mappings (C -> C#):

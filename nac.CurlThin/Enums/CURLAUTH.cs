@@ -1,4 +1,4 @@
-namespace CurlThin.Enums
+namespace nac.CurlThin.Enums
 {
     public enum CURLAUTH : int
     {

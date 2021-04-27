@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace CurlThin.SafeHandles
+namespace nac.CurlThin.SafeHandles
 {
     public sealed class SafeSlistHandle : SafeHandle
     {
