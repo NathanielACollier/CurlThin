@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>libcurl wrapper for C#.</Description>
+    <Description>libcurl wrapper for C#.  Modified from original CurlThin project.  Fits a narrower purpose than that original project.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/NathanielACollier/dotnetLib_nac.CurlThin</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
   
 
