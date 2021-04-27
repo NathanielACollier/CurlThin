@@ -1,6 +1,6 @@
-# CurlThin #
-[![Gitter](https://img.shields.io/gitter/room/CurlThin/Lobby.svg)](https://gitter.im/CurlThin/Lobby)
+# CurlThin
 
++ Forked from [CurlThin](https://github.com/stil/CurlThin)
 
 _CurlThin_ is a NET Standard compatible binding library against [libcurl](http://curl.haxx.se/libcurl).
 It includes a modern wrapper for `curl_multi` interface which uses polling with [libuv](https://libuv.org/) library instead of using inefficient `select`.
@@ -9,10 +9,10 @@ _CurlThin_ has a very thin abstraction layer, which means that writing the code 
 
 Using this library is very much like working with cURL's raw C API.
 
-### License ###
-Library is MIT licensed. NuGet icon made by [Freepik](http://www.freepik.com) and is licensed by [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
+### License
+Library is MIT licensed. 
 
-## Installation ##
+## Installation
 
 ### Linux
 + Install curl
@@ -43,11 +43,11 @@ Library is MIT licensed. NuGet icon made by [Freepik](http://www.freepik.com) an
 + 
 
 
-## Examples ##
+## Examples
 
-### Easy interface ###
+### Easy interface
 
-#### GET request ####
+#### GET request
 ```csharp
 // curl_global_init() with default flags.
 var global = CurlNative.Init();
@@ -87,7 +87,7 @@ finally
 ```
 
 
-#### POST request ####
+#### POST request
 ```csharp
 // curl_global_init() with default flags.
 var global = CurlNative.Init();
@@ -131,8 +131,3 @@ finally
     }
 }
 ```
-
-### Multi interface ###
-
-#### Web scrape StackOverflow questions ####
-See [Multi/HyperSample.cs](CurlThin.Samples/Multi/HyperSample.cs).
