@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
+using CurlThin;
 using CurlThin.Enums;
 using CurlThin.Helpers;
 
-namespace CurlThin.Samples.Easy
+namespace TestApp.Easy
 {
     internal class PostSample : ISample
     {

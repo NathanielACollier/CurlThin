@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CurlThin.Samples
+namespace TestApp
 {
     internal class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace CurlThin.Samples
+﻿namespace TestApp
 {
     internal interface ISample
     {

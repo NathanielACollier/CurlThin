@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Text;
+using CurlThin;
 using CurlThin.Enums;
 using CurlThin.Helpers;
+using CurlThin.SafeHandles;
 
-namespace CurlThin.Samples.Easy
+namespace TestApp.Easy
 {
-    internal class GetSample : ISample
+    internal class HttpHeadersSample : ISample
     {
         public void Run()
         {
@@ -18,10 +20,21 @@ namespace CurlThin.Samples.Easy
             {
                 var dataCopier = new DataCallbackCopier();
 
-                CurlNative.Easy.SetOpt(easy, CURLoption.URL, "http://httpbin.org/ip");
+                CurlNative.Easy.SetOpt(easy, CURLoption.URL, "http://httpbin.org/headers");
                 CurlNative.Easy.SetOpt(easy, CURLoption.WRITEFUNCTION, dataCopier.DataHandler);
 
+                // Initialize HTTP header list with first value.
+                var headers = CurlNative.Slist.Append(SafeSlistHandle.Null, "X-Foo: Bar");
+                // Add one more value to existing HTTP header list.
+                CurlNative.Slist.Append(headers, "X-Qwerty: Asdfgh");
+
+                // Configure libcurl easy handle to send HTTP headers we configured.
+                CurlNative.Easy.SetOpt(easy, CURLoption.HTTPHEADER, headers.DangerousGetHandle());
+
                 var result = CurlNative.Easy.Perform(easy);
+
+                // Cleanup HTTP header list after request has complete.
+                CurlNative.Slist.FreeAll(headers);
 
                 Console.WriteLine($"Result code: {result}.");
                 Console.WriteLine();
