@@ -3,7 +3,6 @@
 + Forked from [CurlThin](https://github.com/stil/CurlThin)
 
 _CurlThin_ is a NET Standard compatible binding library against [libcurl](http://curl.haxx.se/libcurl).
-It includes a modern wrapper for `curl_multi` interface which uses polling with [libuv](https://libuv.org/) library instead of using inefficient `select`.
 
 _CurlThin_ has a very thin abstraction layer, which means that writing the code is as close as possible to writing purely in libcurl. libcurl has extensive documentation and relatively strong support of community and not having additional abstraction layer makes it easier to search solutions for your problems.
 
