@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CurlThin.Native\CurlThin.Native.csproj" />
     <ProjectReference Include="..\CurlThin\CurlThin.csproj" />
   </ItemGroup>
 
