@@ -26,6 +26,22 @@ Library is MIT licensed. NuGet icon made by [Freepik](http://www.freepik.com) an
 	sudo ln -s /usr/lib/x86_64-linux-gnu/libcurl.so.4.6.0 /usr/lib/libcurl.so
 	```
 
+### Windows
++ Install curl somewhere
+
+  + You can download curl at [this website](https://curl.se/windows/)
+  + Unzip the folder somewhere, and add it to your `PATH` system environment variable
+
++ Then you can do the same kind of symbolic linking that linux did to get this to work
+
+  + **NOTE:** You must be at an `Administrator` command prompt to create symbolic links [see](https://stackoverflow.com/questions/894430/creating-hard-and-soft-links-using-powershell)
+
++ ```powershell
+  New-Item -Path C:\Windows\System32\libcurl.dll -ItemType SymbolicLink -Value C:\programs\curl-7.76.1-win64-mingw\bin\libcurl-x64.dll
+  ```
+
++ 
+
 
 ## Examples ##
 
