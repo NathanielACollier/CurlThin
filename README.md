@@ -1,44 +1,52 @@
-# CurlThin #
-[![Gitter](https://img.shields.io/gitter/room/CurlThin/Lobby.svg)](https://gitter.im/CurlThin/Lobby)
+# CurlThin
 
++ Forked from [CurlThin](https://github.com/stil/CurlThin)
 
 _CurlThin_ is a NET Standard compatible binding library against [libcurl](http://curl.haxx.se/libcurl).
-It includes a modern wrapper for `curl_multi` interface which uses polling with [libuv](https://libuv.org/) library instead of using inefficient `select`.
 
 _CurlThin_ has a very thin abstraction layer, which means that writing the code is as close as possible to writing purely in libcurl. libcurl has extensive documentation and relatively strong support of community and not having additional abstraction layer makes it easier to search solutions for your problems.
 
 Using this library is very much like working with cURL's raw C API.
 
-### License ###
-Library is MIT licensed. NuGet icon made by [Freepik](http://www.freepik.com) and is licensed by [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
+### License
+Library is MIT licensed. 
 
-## Installation ##
+## Installation
 
-| Package   | NuGet        | MyGet | Description  |
-|-----------|--------------|-------|--------------|
-| `CurlThin` | [![Nuget](https://img.shields.io/nuget/v/CurlThin.svg)](https://www.nuget.org/packages/CurlThin/) | ![MyGet](https://img.shields.io/myget/curlthin/vpre/CurlThin.svg) | The C# wrapper for libcurl.  |
-| `CurlThin.Native` | [![Nuget](https://img.shields.io/nuget/v/CurlThin.Native.svg)](https://www.nuget.org/packages/CurlThin.Native/) | ![MyGet](https://img.shields.io/myget/curlthin/vpre/CurlThin.Native.svg) | Contains embedded libcurl native binaries for x86 and x64 Windows. |
+### Linux
++ Install curl
+	+ After you have installed curl find the libcurl library with these commands
+	```bash
+	cd /usr/lib
+	find . | grep curl
+	```
+	+ Then create a symbolic link to the right libcurl
+	```bash
+	sudo ln -s /usr/lib/x86_64-linux-gnu/libcurl.so.4.6.0 /usr/lib/libcurl.so
+	```
 
-If you have `libcurl` or `libcurl.dll` already in your PATH directory, you don't need to install `CurlThin.Native` package. Once you have installed `CurlThin.Native` NuGet package, call following method just once before you use cURL:
+### Windows
++ Install curl somewhere
 
-```csharp
-CurlResources.Init();
-```
+  + You can download curl at [this website](https://curl.se/windows/)
+  + Unzip the folder somewhere, and add it to your `PATH` system environment variable
 
-It will extract following files to your application output directory
++ Then you can do the same kind of symbolic linking that linux did to get this to work
 
-| Windows x86 | Windows x64 | Description |
-|-------------|-------------|-------------|
-| libcurl.dll | libcurl.dll | The multiprotocol file transfer library. |
-| libssl-1_1.dll | libssl-1_1-x64.dll | Portion of OpenSSL which supports TLS ( SSL and TLS Protocols), and depends on libcrypto. |
-| libcrypto-1_1.dll | libcrypto-1_1-x64.dll | Provides the fundamental cryptographic routines used by libssl. |
-| curl-ca-bundle.crt | curl-ca-bundle.crt | Certificate Authority (CA) bundle. You can use it via [`CURLOPT_CAINFO`](https://curl.haxx.se/libcurl/c/CURLOPT_CAINFO.html). |
+  + **NOTE:** You must be at an `Administrator` command prompt to create symbolic links [see](https://stackoverflow.com/questions/894430/creating-hard-and-soft-links-using-powershell)
 
-## Examples ##
++ ```powershell
+  New-Item -Path C:\Windows\System32\libcurl.dll -ItemType SymbolicLink -Value C:\programs\curl-7.76.1-win64-mingw\bin\libcurl-x64.dll
+  ```
 
-### Easy interface ###
++ 
 
-#### GET request ####
+
+## Examples
+
+### Easy interface
+
+#### GET request
 ```csharp
 // curl_global_init() with default flags.
 var global = CurlNative.Init();
@@ -78,7 +86,7 @@ finally
 ```
 
 
-#### POST request ####
+#### POST request
 ```csharp
 // curl_global_init() with default flags.
 var global = CurlNative.Init();
@@ -122,8 +130,3 @@ finally
     }
 }
 ```
-
-### Multi interface ###
-
-#### Web scrape StackOverflow questions ####
-See [Multi/HyperSample.cs](CurlThin.Samples/Multi/HyperSample.cs).

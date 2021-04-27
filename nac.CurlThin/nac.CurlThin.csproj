@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>libcurl wrapper for C#.</Description>
+  </PropertyGroup>
+  
+
+</Project>
