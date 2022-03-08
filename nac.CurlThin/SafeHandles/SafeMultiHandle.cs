@@ -5,7 +5,7 @@ namespace nac.CurlThin.SafeHandles
 {
     public sealed class SafeMultiHandle : SafeHandle
     {
-        private SafeMultiHandle() : base(IntPtr.Zero, false)
+        private SafeMultiHandle() : base(IntPtr.Zero, true)
         {
         }
 
