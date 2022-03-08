@@ -5,7 +5,7 @@ namespace nac.CurlThin.SafeHandles
 {
     public sealed class SafeEasyHandle : SafeHandle
     {
-        private SafeEasyHandle() : base(IntPtr.Zero, false)
+        private SafeEasyHandle() : base(IntPtr.Zero, true)
         {
         }
 
