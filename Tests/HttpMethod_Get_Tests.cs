@@ -11,7 +11,7 @@ public class HttpMethod_Get_Tests
     public void getUrlOneTime()
     {
         var libcurl = new lib.libCurlTester();
-        var response = libcurl.get("http://httpbin.org/ip");
+        var response = libcurl.execute("http://httpbin.org/ip");
 
         string responseText = System.Text.Encoding.UTF8.GetString(response.responseBytes);
         
@@ -22,7 +22,7 @@ public class HttpMethod_Get_Tests
     public void getWithHeaders()
     {
         var libCurl = new lib.libCurlTester();
-        var response = libCurl.get(url: "http://httpbin.org/headers",
+        var response = libCurl.execute(url: "http://httpbin.org/headers",
             headers: new Dictionary<string, string>
             {
                 {"X-Foo", "Bar"},

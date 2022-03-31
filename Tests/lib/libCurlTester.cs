@@ -19,8 +19,9 @@ public class libCurlTester: IDisposable
         global = CurlNative.Init();
     }
 
-    public model.CurlResult get(string url,
-                    Dictionary<string,string> headers = null)
+    public model.CurlResult execute(string url,
+                    Dictionary<string,string> headers = null,
+                    Dictionary<string,string> postFields = null)
     {
         // curl_easy_init() to create easy handle.
         var easy = CurlNative.Easy.Init();
@@ -28,6 +29,9 @@ public class libCurlTester: IDisposable
         {
             var dataCopier = new DataCallbackCopier();
             CurlNative.Easy.SetOpt(easy, CURLoption.URL, url);
+
+            handlePostFields(easy, postFields);
+            
             CurlNative.Easy.SetOpt(easy, CURLoption.WRITEFUNCTION, dataCopier.DataHandler);
 
             addHeaders(easy, headers);
@@ -44,6 +48,28 @@ public class libCurlTester: IDisposable
         {
             easy.Dispose();
         }
+    }
+
+    private void handlePostFields(SafeEasyHandle easy, Dictionary<string, string> postFields)
+    {
+        if (postFields == null)
+        {
+            return;
+        }
+
+        if (postFields.Keys.Count < 1)
+        {
+            return;
+        }
+        
+        // form the postfields string
+        string textPostFields = string.Join('&', postFields.Select(d => $"{d.Key}={d.Value}"));
+        
+        // This one has to be called before setting COPYPOSTFIELDS.
+        CurlNative.Easy.SetOpt(easy, CURLoption.POSTFIELDSIZE,System.Text.Encoding.ASCII.GetByteCount(textPostFields));
+        CurlNative.Easy.SetOpt(easy, CURLoption.COPYPOSTFIELDS, textPostFields);
+        
+        
     }
 
     private void addHeaders(SafeEasyHandle easy, Dictionary<string, string> dictionary)
