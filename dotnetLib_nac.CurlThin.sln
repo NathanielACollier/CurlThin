@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nac.CurlThin", "nac.CurlThin\nac.CurlThin.csproj", "{72DCABEB-E6BB-4213-A710-64EF7089460C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{9EBE449D-3D4A-49DB-92FB-35256C7B3A5E}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{72DCABEB-E6BB-4213-A710-64EF7089460C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72DCABEB-E6BB-4213-A710-64EF7089460C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72DCABEB-E6BB-4213-A710-64EF7089460C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4CB73A4-8984-4341-AEDC-CE8AA1598BA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EBE449D-3D4A-49DB-92FB-35256C7B3A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9EBE449D-3D4A-49DB-92FB-35256C7B3A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EBE449D-3D4A-49DB-92FB-35256C7B3A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
