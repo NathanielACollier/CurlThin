@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests;
@@ -36,4 +37,23 @@ public class HttpMethod_Get_Tests
                       responseText.Contains("X-Qwerty", StringComparison.OrdinalIgnoreCase)
                       );
     }
+
+
+    [TestMethod]
+    public void getResuseCurlInstance()
+    {
+        var libcurl = new lib.libCurlTester();
+        for (int i = 0; i < 20; ++i)
+        {
+            var resp = libcurl.execute("http://httpbin.org/ip");
+            string responseText = System.Text.Encoding.UTF8.GetString(resp.responseBytes);
+            
+            Assert.IsTrue(responseText.Length > 0);
+            System.Diagnostics.Debug.WriteLine($"Iteration[{i}]; Response: {responseText}");
+            Thread.Sleep(1000 * 5);
+        }
+    }
+    
+    
+    
 }
