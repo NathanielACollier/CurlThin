@@ -113,8 +113,7 @@ public class libCurlTester: IDisposable
 
         if (headers != null)
         {
-            // Cleanup HTTP header list after request has complete.
-            CurlNative.Slist.FreeAll(headers);
+            headers.Dispose();
         }
     }
 }
