@@ -15,7 +15,7 @@ namespace nac.CurlThin.SafeHandles
 
         protected override bool ReleaseHandle()
         {
-            CurlNative.Slist.FreeAll(this);
+            CurlNative.Slist.FreeAll(handle);
             return true;
         }
     }
